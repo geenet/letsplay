@@ -1,4 +1,4 @@
-name := """a2pi"""
+name := """aapi"""
 
 version := "1.0-SNAPSHOT"
 

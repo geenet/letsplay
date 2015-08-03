@@ -5,6 +5,8 @@
 #http://127.0.0.1:9000/file/products
 #http://127.0.0.1:9000/file/categories
 GET     /                           controllers.Application.index
+GET     /v1/articles                controllers.Application.articles(q: Option[String])
+GET     /v1/articles/*sku           controllers.Application.article(sku: String)
 GET     /v1/*filename               controllers.Application.staticUrl(filename: String)
 GET     /url/*filename              controllers.Application.staticUrl(filename: String)
 GET     /file/*filename             controllers.Application.staticFile(filename: String)
@@ -12,8 +14,14 @@ POST    /file/*filename             controllers.Application.staticFile(filename:
 DELETE  /file/*filename             controllers.Application.staticFile(filename: String)
 PATCH   /file/*filename             controllers.Application.staticFile(filename: String)
 PUT     /file/*filename             controllers.Application.staticFile(filename: String)
+
+GET     /pfile/*filename             controllers.Application.staticFile(filename: String)
+
 GET     /base                       controllers.Application.base
 GET     /home                       controllers.Application.home
+#GET     /params/*filename           controllers.Application.params(filename: String)
+
+
 GET     /search                     controllers.Application.search(q: String)
 
 # Map static resources from the /public folder to the /assets URL path
