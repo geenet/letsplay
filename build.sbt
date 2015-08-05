@@ -1,16 +1,18 @@
-name := """aapi"""
+name := """a2pi"""
 
 version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
+  "com.datastax.cassandra" % "cassandra-driver-core" % "2.2.0-rc2",
   specs2 % Test
+
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"

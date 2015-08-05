@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/a/code/github/guguncube/letsplay/conf/application.conf,/Users/a/code/github/guguncube/letsplay/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/a/code/github/guguncube/letsplay/conf/dataimport.cql.txt,/Users/a/code/github/guguncube/letsplay/target/scala-2.11/classes/dataimport.cql.txt)[0m
+[0m[[0mdebug[0m] [0m	(/Users/a/code/github/guguncube/letsplay/conf/logback.xml,/Users/a/code/github/guguncube/letsplay/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/a/code/github/guguncube/letsplay/conf/migrations,/Users/a/code/github/guguncube/letsplay/target/scala-2.11/classes/migrations)[0m
+[0m[[0mdebug[0m] [0m	(/Users/a/code/github/guguncube/letsplay/conf/routes,/Users/a/code/github/guguncube/letsplay/target/scala-2.11/classes/routes)[0m
