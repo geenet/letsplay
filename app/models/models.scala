@@ -43,7 +43,7 @@ class SongsRepository(client: SimpleClient) {
   }
 }
 
-object JsonFormats {
+object JsonFormats{
 
   /**
    * Deserializer for java.util.UUID, from latest play Reads (was added on 2014-03-01 to master,
@@ -79,4 +79,15 @@ object JsonFormats {
     (__ \ 'title).read[String] and
     (__ \ 'album).read[String] and
     (__ \ 'artist).read[String]) tupled
+
+
+
+  implicit val usersFormat: Format[Users] = Json.format[Users]
+  implicit val usersDataReads = (
+    (__ \ 'email).read[String] and
+      (__ \ 'firstname).read[String] and
+      (__ \ 'lastname).read[String] and
+      (__ \ 'password).read[String]) tupled
+
+
 }

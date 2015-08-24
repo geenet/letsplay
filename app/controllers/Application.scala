@@ -1,4 +1,5 @@
 package controllers
+import play.api.i18n.Messages
 
 import play.api._
 import play.api.mvc._
@@ -14,12 +15,31 @@ import org.apache.http.impl.client.DefaultHttpClient
 import scala.collection.mutable.StringBuilder
 import play.api.libs.json._
 import play.api.Play.current
+import play.api.libs.json.Json
 
 class Application extends Controller {
 
   def index = Action {
-      //Ok(views.html.index("Your new application is ready."))
-      Ok("Alpha")
+    //Ok(views.html.index("Your new application is ready."))
+    Ok("Alpha")
+  }
+
+  def jsonMe = Action {
+    val j = Json.obj(
+      "users" -> Json.arr(
+        Json.obj(
+          "name" -> "bob",
+          "age" -> 31,
+          "email" -> "bob@gmail.com"
+        ),
+        Json.obj(
+          "name" -> "kiki",
+          "age" -> 25,
+          "email" -> JsNull
+        )
+      )
+    )
+    Ok(j).as("application/json")
   }
 
   def base = Action { request =>
