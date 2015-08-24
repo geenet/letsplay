@@ -101,4 +101,32 @@ class Application extends Controller {
       return content
   }
 
+def testMailer()  = Action {
+  val mail = use[MailerPlugin].email
+  mail.setSubject("mailer test")
+  mail.setRecipient("myfriend@gmail.com")
+  mail.send("Hello, this is a test. ")
+
+}
+  //http://chocksaway.com/blog/?p=547
+  def sendEmail() = Action {
+    val mail = use[MailerPlugin].email
+    mail.setSubject("mailer")
+    mail.setRecipient("Miles Davenport <milesd@foo.com>","milesd@foo.com")
+    //or use a list
+    //mail.setBcc(List("Dummy <example@example.org>", "Dummy2 <example@example.org>"):_*)
+    mail.setFrom("Miles Davenport <miles.davenport@anotheremail.com>")
+    //adds attachment
+    //mail.addAttachment("attachment.pdf", new File("/some/path/attachment.pdf"))
+    //adds inline attachment from byte array
+    //val data: Array[Byte] = "data".getBytes
+    //mail.addAttachment("data.txt", data, "text/plain", "A simple file", EmailAttachment.INLINE)
+    //sends html
+    //mail.sendHtml("<html>html</html>" )
+    //sends text/text
+    mail.send( "text" )
+    //sends both text and html
+    //mail.send( "text", "<html>html</html>")
+    Ok("Hello")
+  }
 }
